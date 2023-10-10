@@ -6,15 +6,24 @@ import App from './App';
 import { store } from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
+import "../src/pages/component/styles.css";
+
+import "./tail.css";
+
+
+
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+  
     <Provider store={store}>
       <CssBaseline />
       <App />
     </Provider>
+  
   </React.StrictMode>
 );
 

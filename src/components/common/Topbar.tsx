@@ -14,11 +14,7 @@ const Topbar = () => {
         color: colorConfigs.topbar.color
       }}
     >
-      <Toolbar>
-        <Typography variant="h6">
-          React sidebar with dropdown
-        </Typography>
-      </Toolbar>
+
     </AppBar>
   );
 };

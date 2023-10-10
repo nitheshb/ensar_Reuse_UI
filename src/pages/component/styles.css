@@ -1,0 +1,14 @@
+.line{
+    width: 791px; 
+    height: 2px; 
+    opacity: 0.3;
+    background-color: #F5F5F5; 
+    margin: 10px 0; 
+}
+
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";

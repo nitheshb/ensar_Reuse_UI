@@ -2,10 +2,11 @@ import { colors } from "@mui/material";
 
 const colorConfigs = {
   sidebar: {
-    bg: "#233044",
-    color: "#eeeeee",
-    hoverBg: "#1e293a",
-    activeBg: "#1e253a"
+    bg: "#FFFFF",
+    color: "#040D12",
+    hoverBg: "",
+    activeBg: "",
+    
   },
   topbar: {
     bg: "#fff",

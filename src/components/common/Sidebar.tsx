@@ -18,18 +18,24 @@ const Sidebar = () => {
           boxSizing: "border-box",
           borderRight: "0px",
           backgroundColor: colorConfigs.sidebar.bg,
-          color: colorConfigs.sidebar.color
+          color: colorConfigs.sidebar.color,
+          paddingTop: "",
+          marginTop: "4.9rem"
         }
       }}
     >
       <List disablePadding>
-        <Toolbar sx={{ marginBottom: "20px" }}>
+        <Toolbar sx={{ marginBottom: "10px" }}>
           <Stack
             sx={{ width: "100%" }}
             direction="row"
             justifyContent="center"
+            //borderColor={"white"}
           >
-            <Avatar src={assets.images.logo} />
+
+            <p style={{marginRight:"12px"}}><b>Getting Started</b></p>
+            
+            
           </Stack>
         </Toolbar>
         {appRoutes.map((route, index) => (

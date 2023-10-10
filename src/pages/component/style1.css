@@ -1,0 +1,101 @@
+/* styles.css */
+
+/* Define a class for the outer div */
+.box {
+    width: 663px;
+    height: 356px;
+  }
+  
+  /* Define styles for the headings */
+  h1 {
+    font-size: 2.25rem; /* Equivalent to text-4xl */
+    font-weight: 800; /* Equivalent to font-extrabold */
+    letter-spacing: -0.025em; /* Equivalent to tracking-tight */
+  }
+  
+  h2 {
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: 600; /* Equivalent to font-semibold */
+    border-bottom: 1px solid #000; /* Equivalent to border-b */
+    padding-bottom: 0.5rem; /* Equivalent to pb-2 */
+  }
+  
+  h3 {
+    font-size: 1.5rem; /* Equivalent to text-2xl */
+    font-weight: 600; /* Equivalent to font-semibold */
+  }
+  
+  /* Define styles for paragraphs */
+  p {
+    margin-top: 1.5rem; /* Equivalent to mt-6 */
+    line-height: 1.75; /* Equivalent to leading-7 */
+  }
+  
+  /* Define styles for links */
+  a {
+    font-weight: 500; /* Equivalent to font-medium */
+    color: #0070f3; /* Equivalent to text-primary */
+    text-decoration: underline;
+    text-decoration-offset: 0.25rem; /* Equivalent to underline-offset-4 */
+  }
+  
+  /* Define styles for blockquotes */
+  blockquote {
+    margin-top: 1rem; /* Equivalent to mt-6 */
+    padding-left: 1.5rem; /* Equivalent to pl-6 */
+    font-style: italic;
+  }
+  
+  /* Define styles for lists */
+  ul {
+    margin-top: 1.5rem; /* Equivalent to mt-6 */
+    margin-left: 1.5rem; /* Equivalent to ml-6 */
+    list-style-type: disc;
+  }
+  
+  li {
+    margin-top: 0.5rem; /* Equivalent to mt-2 */
+  }
+  
+  /* Define styles for tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #000;
+    padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 */
+    text-align: left;
+  }
+  
+  /* Define styles for even rows in tables */
+  tr:nth-child(even) {
+    background-color: #f7f7f7; /* Equivalent to even:bg-muted */
+  }
+  
+  /* Define styles for alignment in table cells */
+  th[align="center"], td[align="center"] {
+    text-align: center;
+  }
+  
+  th[align="right"], td[align="right"] {
+    text-align: right;
+  }
+  
+  /* Add styles for the .scroll-m-20 class */
+  .scroll-m-20 {
+    margin-top: 5rem;
+  }
+  
+  /* Add styles for the .first class (first-child equivalent) */
+  .first {
+    margin-top: 0;
+  }
+  
+
+
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;

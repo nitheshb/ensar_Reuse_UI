@@ -5,6 +5,7 @@ import colorConfigs from "../../configs/colorConfigs";
 import { RootState } from "../../redux/store";
 import { RouteType } from "../../routes/config";
 
+
 type Props = {
   item: RouteType;
 };
