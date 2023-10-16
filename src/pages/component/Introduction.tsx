@@ -15,8 +15,6 @@ const boxStyle = {
   border: '2px solid #000', 
   padding: '20px', 
   maxWidth: '800px', 
-   
-
 };
 
 
@@ -26,7 +24,7 @@ const Introduction = () => {
   return (
 
 
-    <div style={{paddingTop:"4rem", paddingLeft:"2rem"}}>
+    <div style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
      <b><h1 style={{fontSize:'3rem'}}>Introduction</h1></b>  
 

@@ -10,6 +10,7 @@ const Topbar = () => {
         width: `calc(100% - ${sizeConfigs.sidebar.width})`,
         ml: sizeConfigs.sidebar.width,
         boxShadow: "unset",
+        
         backgroundColor: colorConfigs.topbar.bg,
         color: colorConfigs.topbar.color
       }}

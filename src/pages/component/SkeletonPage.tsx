@@ -11,31 +11,35 @@ import TabPanel from '@mui/lab/TabPanel';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { LocalizationProvider } from '@mui/x-date-pickers-pro';
-import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
-import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
 
 
 
-const codeString = `
+const codeString = `import * as React from 'react';
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
+export default function Variants() {
+  return (
+    <Stack spacing={1}>
+      {/* For variant="text", adjust the height via font-size */}
+      <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+
+     
+      <Skeleton variant="circular" width={40} height={40} />
+      <Skeleton variant="rectangular" width={210} height={60} />
+      <Skeleton variant="rounded" width={210} height={60} />
+    </Stack>
+  );
+}
 `
-const codeString1 = `
+const codeString1 = `import Skeleton from '@mui/material/Skeleton';`
 
-`
+const codeString2 = `<Skeleton variant="circular" width={40} height={40} />`
 
-const codeString2 = `
-
-`
-
-
-
-
-
-const  CalendarPage  = () => {
+const  SkeletonPage  = () => {
 
 
   const [open, setOpen] = React.useState(false);
@@ -53,9 +57,9 @@ const  CalendarPage  = () => {
   return (
     <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
-    <b><h1 style={{fontSize:'2rem'}}></h1></b>
+    <b><h1 style={{fontSize:'2rem'}}>Skeleton</h1></b>
     
-    <p style={{color:"#99999F"}}></p>
+    <p style={{color:"#99999F"}}>Use to show a placeholder while content is loading.</p>
     
     
      <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
@@ -85,7 +89,15 @@ const  CalendarPage  = () => {
         <div style={{width:"609px", height:"400px", display:"flex",alignItems:"center",justifyContent:"center"}}>
     
     
-          
+        <Stack spacing={1}>
+      {/* For variant="text", adjust the height via font-size */}
+      <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+
+      {/* For other variants, adjust the size with `width` and `height` */}
+      <Skeleton variant="circular" width={40} height={40} />
+      <Skeleton variant="rectangular" width={210} height={60} />
+      <Skeleton variant="rounded" width={210} height={60} />
+    </Stack>
             
               
         
@@ -93,11 +105,7 @@ const  CalendarPage  = () => {
         
     
     
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DateRangeCalendar']}>
-        <DateRangeCalendar />
-      </DemoContainer>
-    </LocalizationProvider>
+        
     
     
     
@@ -124,12 +132,10 @@ const  CalendarPage  = () => {
     </Box>
     
     
-
+    
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
-    
-    
     
     
     
@@ -141,7 +147,7 @@ const  CalendarPage  = () => {
           
             borderRadius: '10px', 
             width: '680px',
-            height:'140px'
+            height:'50px'
             
     
         }}>
@@ -155,7 +161,7 @@ const  CalendarPage  = () => {
           
           borderRadius: '10px', 
           width: '680px',
-          height:'200px',
+          height:'50px',
           marginTop:"1.7rem",
           
     
@@ -197,5 +203,4 @@ const  CalendarPage  = () => {
 
 
 
-
-export default CalendarPage
+export default SkeletonPage

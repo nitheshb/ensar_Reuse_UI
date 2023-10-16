@@ -11,31 +11,51 @@ import TabPanel from '@mui/lab/TabPanel';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { LocalizationProvider } from '@mui/x-date-pickers-pro';
-import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
-import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 
+const codeString = `import * as React from 'react';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-
-const codeString = `
-
+export default function BasicDatePicker() {
+  return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']}>
+        <DatePicker label="Basic date picker" />
+      </DemoContainer>
+    </LocalizationProvider>
+  );
+}
 `
-const codeString1 = `
+const codeString1 = `import * as React from 'react';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
+export default function BasicDatePicker() {
+  return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']}>
+        <DatePicker label="Basic date picker" />
+      </DemoContainer>
+    </LocalizationProvider>
+  );
+}
 `
 
 const codeString2 = `
 
 `
 
-
-
-
-
-const  CalendarPage  = () => {
+const  DatePickers  = () => {
 
 
   const [open, setOpen] = React.useState(false);
@@ -53,9 +73,9 @@ const  CalendarPage  = () => {
   return (
     <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
-    <b><h1 style={{fontSize:'2rem'}}></h1></b>
+    <b><h1 style={{fontSize:'2rem'}}>Date Picker</h1></b>
     
-    <p style={{color:"#99999F"}}></p>
+    <p style={{color:"#99999F"}}>A date picker component with range and presets.</p>
     
     
      <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
@@ -90,19 +110,19 @@ const  CalendarPage  = () => {
               
         
               
-        
-    
-    
+   
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DateRangeCalendar']}>
-        <DateRangeCalendar />
+      <DemoContainer components={['DatePicker']}>
+      <DatePicker label="Basic date picker" />
       </DemoContainer>
     </LocalizationProvider>
     
-    
-    
         
-      
+    
+    
+    
+    
+  
     
         </div>
         
@@ -129,9 +149,9 @@ const  CalendarPage  = () => {
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
+    <p>The Date Picker is built using a composition of the <code>&lt;Calendar /&gt;</code> and the <code>&lt;Popover &gt;</code> <br /> components.</p> <br />
     
-    
-    
+    <p>See installation instructions for the Popover and the Calendar components.</p>
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
     
@@ -141,28 +161,23 @@ const  CalendarPage  = () => {
           
             borderRadius: '10px', 
             width: '680px',
-            height:'140px'
+            height:'400px'
             
     
         }}>
           {codeString1}
         </SyntaxHighlighter>
     
+
+    <br />
+    <br />
     
     
         
-    <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
-          
-          borderRadius: '10px', 
-          width: '680px',
-          height:'200px',
-          marginTop:"1.7rem",
-          
     
-      }}>
-        {codeString2}
-      </SyntaxHighlighter>
-    
+    <p>See the <u>React DayPicker</u>  documentation for more information.
+
+</p>
     
     
     
@@ -181,21 +196,16 @@ const  CalendarPage  = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
   
 
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-export default CalendarPage
+export default DatePickers

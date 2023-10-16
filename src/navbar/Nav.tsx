@@ -85,7 +85,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="fixed">
-      <Container maxWidth="xl" sx={{ backgroundColor: '#FFFFFF' }}>
+      <Container maxWidth="xl"  sx={{ backgroundColor: '#FFFFFF', height:"3.5rem" }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -93,7 +93,7 @@ function ResponsiveAppBar() {
             component="a"
             href="#app-bar-with-responsive-menu"
             sx={{
-              mr: 2,
+              mr: 1,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,

@@ -1,6 +1,6 @@
 const sizeConfigs = {
   sidebar: {
-    width: "300px",
+    width: "240px",
     height: "90vh",
     zIndex: -10
     

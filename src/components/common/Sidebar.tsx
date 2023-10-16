@@ -12,15 +12,18 @@ const Sidebar = () => {
       variant="permanent"
       sx={{
         width: sizeConfigs.sidebar.width,
+        height: sizeConfigs.sidebar.height,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
           width: sizeConfigs.sidebar.width,
           boxSizing: "border-box",
           borderRight: "0px",
-          backgroundColor: colorConfigs.sidebar.bg,
-          color: colorConfigs.sidebar.color,
+          color:"#77777F",
+        
+        
+          
           paddingTop: "",
-          marginTop: "4.9rem"
+          marginTop: "4.7rem"
         }
       }}
     >
@@ -30,10 +33,10 @@ const Sidebar = () => {
             sx={{ width: "100%" }}
             direction="row"
             justifyContent="center"
-            //borderColor={"white"}
+                        //borderColor={"white"}
           >
 
-            <p style={{marginRight:"12px"}}><b>Getting Started</b></p>
+            <p style={{marginRight:""}}><b>Getting Started</b></p>
             
             
           </Stack>

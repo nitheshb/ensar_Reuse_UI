@@ -12,30 +12,75 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { LocalizationProvider } from '@mui/x-date-pickers-pro';
-import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
-import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
+import BasicPopover from './Pop';
 
 
 
 
-const codeString = `
+const codeString = `import * as React from 'react';
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
+export default function BasicPopover() {
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
+  return (
+    <div>
+      <Button aria-describedby={id} variant="contained" onClick={handleClick}>
+        Open Popover
+      </Button>
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+      >
+        <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
+      </Popover>
+    </div>
+  );
+}
 `
-const codeString1 = `
+const codeString1 = `import * as React from 'react';
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';`
 
-`
+const codeString2 = `<Popover
+id={id}
+open={open}
+anchorEl={anchorEl}
+onClose={handleClose}
+anchorOrigin={{
+  vertical: 'bottom',
+  horizontal: 'left',
+}}
+>
+<Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
+</Popover>`
 
-const codeString2 = `
-
-`
+const  PopoverPage  = () => {
 
 
 
 
-
-const  CalendarPage  = () => {
+  
 
 
   const [open, setOpen] = React.useState(false);
@@ -53,9 +98,9 @@ const  CalendarPage  = () => {
   return (
     <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
-    <b><h1 style={{fontSize:'2rem'}}></h1></b>
+    <b><h1 style={{fontSize:'2rem'}}>Popover</h1></b>
     
-    <p style={{color:"#99999F"}}></p>
+    <p style={{color:"#99999F"}}>Displays rich content in a portal, triggered by a button.</p>
     
     
      <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
@@ -87,17 +132,13 @@ const  CalendarPage  = () => {
     
           
             
-              
+              <BasicPopover/>
         
               
         
     
     
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DateRangeCalendar']}>
-        <DateRangeCalendar />
-      </DemoContainer>
-    </LocalizationProvider>
+        
     
     
     
@@ -124,12 +165,10 @@ const  CalendarPage  = () => {
     </Box>
     
     
-
+    
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
-    
-    
     
     
     
@@ -155,7 +194,7 @@ const  CalendarPage  = () => {
           
           borderRadius: '10px', 
           width: '680px',
-          height:'200px',
+          height:'310px',
           marginTop:"1.7rem",
           
     
@@ -197,5 +236,4 @@ const  CalendarPage  = () => {
 
 
 
-
-export default CalendarPage
+export default PopoverPage

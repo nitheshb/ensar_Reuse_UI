@@ -12,30 +12,47 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { LocalizationProvider } from '@mui/x-date-pickers-pro';
-import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
-import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
+import Switch from '@mui/material/Switch';
 
 
 
+const codeString = `import * as React from 'react';
+import Switch from '@mui/material/Switch';
 
-const codeString = `
+export default function ControlledSwitches() {
+  const [checked, setChecked] = React.useState(true);
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
+
+  return (
+    <Switch
+      checked={checked}
+      onChange={handleChange}
+      inputProps={{ 'aria-label': 'controlled' }}
+    />
+  );
+}
 `
-const codeString1 = `
+const codeString1 = `import Switch from '@mui/material/Switch';`
 
-`
+const codeString2 = `<Switch
+checked={checked}
+onChange={handleChange}
+inputProps={{ 'aria-label': 'controlled' }}
+/>`
 
-const codeString2 = `
-
-`
+const  SwitchPage  = () => {
 
 
+  
+  const [checked, setChecked] = React.useState(true);
 
+  const handleSwitchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
 
-
-const  CalendarPage  = () => {
 
 
   const [open, setOpen] = React.useState(false);
@@ -53,9 +70,9 @@ const  CalendarPage  = () => {
   return (
     <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
-    <b><h1 style={{fontSize:'2rem'}}></h1></b>
+    <b><h1 style={{fontSize:'2rem'}}>Switch</h1></b>
     
-    <p style={{color:"#99999F"}}></p>
+    <p>A control that allows the user to toggle between checked and not checked.</p>
     
     
      <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
@@ -74,7 +91,7 @@ const  CalendarPage  = () => {
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Preview" value="1" />
+            <Tab style={{color:"black"}} label="Preview" value="1" />
             <Tab label="Code" value="2" />
             
           </TabList>
@@ -89,15 +106,15 @@ const  CalendarPage  = () => {
             
               
         
-              
+        <Switch
+      checked={checked}
+      onChange={handleSwitchChange}
+      inputProps={{ 'aria-label': 'controlled' }}
+    />
         
     
     
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DateRangeCalendar']}>
-        <DateRangeCalendar />
-      </DemoContainer>
-    </LocalizationProvider>
+        
     
     
     
@@ -108,7 +125,7 @@ const  CalendarPage  = () => {
         
         </TabPanel>
         </div>
-        <TabPanel value="2">   
+        <TabPanel  value="2">   
          <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
             padding: '25px' ,
             borderRadius: '10px', 
@@ -124,10 +141,6 @@ const  CalendarPage  = () => {
     </Box>
     
     
-
-    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
-    
-    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
     
@@ -141,7 +154,7 @@ const  CalendarPage  = () => {
           
             borderRadius: '10px', 
             width: '680px',
-            height:'140px'
+            height:'50px'
             
     
         }}>
@@ -155,7 +168,7 @@ const  CalendarPage  = () => {
           
           borderRadius: '10px', 
           width: '680px',
-          height:'200px',
+          height:'140px',
           marginTop:"1.7rem",
           
     
@@ -187,15 +200,6 @@ const  CalendarPage  = () => {
 
   
 
+ 
 
-
-
-
-
-
-
-
-
-
-
-export default CalendarPage
+export default SwitchPage

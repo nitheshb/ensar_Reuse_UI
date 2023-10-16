@@ -24,7 +24,7 @@ import  Combobox from "../pages/component/Combobox";
 import   Command from "../pages/component/Command";
 import   ContextMenu from "../pages/component/ContextMenu";
 import DataTable from "../pages/component/DataTable";
-import DatePicker from "../pages/component/DatePicker";
+import DatePicker from "../pages/component/DatePickers";
 import Dialog from "../pages/component/Dialog";
 import HoverCard from "../pages/component/HoverCard";
 import Form from "../pages/component/Form";
@@ -33,15 +33,15 @@ import Input from "../pages/component/Input";
 import Label from "../pages/component/Label";
 import Menubar from "../pages/component/Menubar";
 import NavigationMenu from "../pages/component/NavigationMenu";
-import Popover from "../pages/component/Popover";
+import Popover from "../pages/component/PopoverPage";
 import Progress from "../pages/component/Progress";
-import RadioGroup from "../pages/component/RadioGroup";
+import RadioGroup from "../pages/component/RadioGroups";
 import Scrollarea from "../pages/component/Scrollarea";
-import Select from "../pages/component/Select";
+
 import Separator from "../pages/component/Separator";
-import Skeleton from "../pages/component/Skeleton";
-import Slider from "../pages/component/Slider";
-import Switch from "../pages/component/Switch";
+import Skeleton from "../pages/component/SkeletonPage";
+import Slider from "../pages/component/SliderPage";
+import Switch from "../pages/component/SwitchPage";
 import Tabs from "../pages/component/Tabs";
 import Textarea from "../pages/component/Textarea";
 import Toast from "../pages/component/Toast";
@@ -61,6 +61,18 @@ import TablePage from "../pages/table/TablePage";
 import Figma from "../pages/component/Figma";
 import AspectRatios from "../pages/component/AspectRatios";
 import AvatarPage from "../pages/component/AvatarPage";
+import Inputs from "../pages/component/Input";
+
+
+import Tablepage from "../pages/component/Tablepage";
+import SkeletonPage from "../pages/component/SkeletonPage";
+import RadioGroups from "../pages/component/RadioGroups";
+import PopoverPage from "../pages/component/PopoverPage";
+import SliderPage from "../pages/component/SliderPage";
+import SwitchPage from "../pages/component/SwitchPage";
+import DatePickers from "../pages/component/DatePickers";
+
+
 
 const appRoutes: RouteType[] = [
   {
@@ -256,9 +268,9 @@ const appRoutes: RouteType[] = [
       },
 
       {
-        path: "/component/DatePicker",
-        element: < DatePicker/>,
-        state: "component.DatePicker",
+        path: "/component/DatePickers",
+        element: < DatePickers/>,
+        state: "component.DatePickers",
         sidebarProps: {
           displayText: "DatePicker"
         }
@@ -307,7 +319,7 @@ const appRoutes: RouteType[] = [
 
       {
         path: "/component/ Input",
-        element: <Input/>,
+        element: <Inputs/>,
         state: "component.Input",
         sidebarProps: {
           displayText: "Input"
@@ -347,9 +359,9 @@ const appRoutes: RouteType[] = [
 
       
       {
-        path: "/component/Popover",
-        element: <Popover />,
-        state: "component.Popover",
+        path: "/component/PopoverPage",
+        element: <PopoverPage />,
+        state: "component.PopoverPage",
         sidebarProps: {
           displayText: "Popover"
         }
@@ -367,9 +379,9 @@ const appRoutes: RouteType[] = [
 
       
       {
-        path: "/component/RadioGroup",
-        element: <RadioGroup />,
-        state: "component.RadioGroup",
+        path: "/component/RadioGroups",
+        element: <RadioGroups />,
+        state: "component.RadioGroups",
         sidebarProps: {
           displayText: "RadioGroup"
         }
@@ -385,15 +397,7 @@ const appRoutes: RouteType[] = [
         }
       },
 
-      {
-        path: "/component/Select",
-        element: < Select/>,
-        state: "component.Select",
-        sidebarProps: {
-          displayText: "Select"
-        }
-      },
-
+      
       {
         path: "/component/Separator",
         element: < Separator/>,
@@ -414,9 +418,9 @@ const appRoutes: RouteType[] = [
       },
 
       {
-        path: "/component/Skeleton",
-        element: < Skeleton/>,
-        state: "component.Skeleton",
+        path: "/component/SkeletonPage",
+        element: < SkeletonPage/>,
+        state: "component.SkeletonPage",
         sidebarProps: {
           displayText: "Skeleton"
         }
@@ -424,22 +428,33 @@ const appRoutes: RouteType[] = [
 
 
       {
-        path: "/component/Slider",
-        element: < Slider/>,
-        state: "component.Slider",
+        path: "/component/SliderPage",
+        element: < SliderPage/>,
+        state: "component.SliderPage",
         sidebarProps: {
           displayText: "Slider"
         }
       },
 
       {
-        path: "/component/Switch",
-        element: < Switch/>,
-        state: "component.Switch",
+        path: "/component/SwitchPage",
+        element: < SwitchPage/>,
+        state: "component.SwitchPage",
         sidebarProps: {
           displayText: "Switch"
         }
       },
+
+
+      {
+        path: "/component/Tablepage",
+        element: < Tablepage/>,
+        state: "component.Tablepage",
+        sidebarProps: {
+          displayText: "Table"
+        }
+      },
+
 
       {
         path: "/component/Tabs",

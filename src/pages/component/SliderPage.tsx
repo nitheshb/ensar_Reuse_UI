@@ -12,30 +12,42 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { LocalizationProvider } from '@mui/x-date-pickers-pro';
-import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
-import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
+import Slider from '@mui/material/Slider';
 
 
 
 
-const codeString = `
+const codeString = `import * as React from 'react';
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
 
+export default function SliderSizes() {
+  return (
+    <Box sx={{ width: 300 }}>
+      <Slider
+        size="small"
+        defaultValue={70}
+        aria-label="Small"
+        valueLabelDisplay="auto"
+      />
+      <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+    </Box>
+  );
+}
 `
-const codeString1 = `
+const codeString1 = `import Slider from '@mui/material/Slider';`
 
-`
+const codeString2 = `<Box sx={{ width: 300 }}>
+<Slider
+  size="small"
+  defaultValue={70}
+  aria-label="Small"
+  valueLabelDisplay="auto"
+/>
+<Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+</Box>`
 
-const codeString2 = `
-
-`
-
-
-
-
-
-const  CalendarPage  = () => {
+const  SliderPage  = () => {
 
 
   const [open, setOpen] = React.useState(false);
@@ -53,9 +65,9 @@ const  CalendarPage  = () => {
   return (
     <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
-    <b><h1 style={{fontSize:'2rem'}}></h1></b>
+    <b><h1 style={{fontSize:'2rem'}}>Slider</h1></b>
     
-    <p style={{color:"#99999F"}}></p>
+    <p style={{color:"#99999F"}}>An input where the user selects a value from within a given range.</p>
     
     
      <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
@@ -86,18 +98,23 @@ const  CalendarPage  = () => {
     
     
           
-            
+        <Box sx={{ width: 300 }}>
+      <Slider
+        size="small"
+        defaultValue={70}
+        aria-label="Small"
+        valueLabelDisplay="auto"
+        sx={{color:"black"}}
+      />
+      <Slider sx={{color:"black"}} defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+    </Box>
               
         
               
         
     
     
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DateRangeCalendar']}>
-        <DateRangeCalendar />
-      </DemoContainer>
-    </LocalizationProvider>
+        
     
     
     
@@ -141,7 +158,7 @@ const  CalendarPage  = () => {
           
             borderRadius: '10px', 
             width: '680px',
-            height:'140px'
+            height:'50px'
             
     
         }}>
@@ -155,7 +172,7 @@ const  CalendarPage  = () => {
           
           borderRadius: '10px', 
           width: '680px',
-          height:'200px',
+          height:'238px',
           marginTop:"1.7rem",
           
     
@@ -198,4 +215,4 @@ const  CalendarPage  = () => {
 
 
 
-export default CalendarPage
+export default SliderPage
