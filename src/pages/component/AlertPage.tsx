@@ -110,12 +110,12 @@ const AlertPage = (props: Props) => {
     <div style={{padding:"27px"}}>
 
 
-      <b><p style={{fontSize:"2rem",paddingTop:"1.5rem"}}>Alert</p></b>
+      <b><p style={{fontSize:"2rem",paddingTop:"1rem"}}>Alert</p></b>
     
 
 
 
-      <p>Displays a callout for user attention.</p>
+      <p style={{color:"#99999F"}}>Displays a callout for user attention.</p>
 
 
       <Box sx={{ width: '663px',  typography: 'body1' }}>

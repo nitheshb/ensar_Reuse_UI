@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '18ch',
       '&:focus': {
         width: '20ch',
       },
@@ -85,7 +85,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="fixed">
-      <Container maxWidth="xl"  sx={{ backgroundColor: '#FFFFFF', height:"3.5rem" }}>
+      <Container maxWidth="xl"  sx={{ backgroundColor: '#FFFFFF', height:"3.8rem", }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -163,6 +163,7 @@ function ResponsiveAppBar() {
               letterSpacing: '.3rem',
               color: '#09090B',
               textDecoration: 'none',
+            
             }}
           >
             Reuse UI

@@ -1,32 +1,4 @@
-import React from 'react';
-import {  Box } from '@mui/material';
-import './styles.css';
-import '../../tail.css';
-
-import Tab from '@mui/material/Tab';
-import { Button } from '@mui/material';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
-import Menu from '@mui/joy/Menu';
-import MenuItem, { menuItemClasses } from '@mui/joy/MenuItem';
-import List from '@mui/joy/List';
-import ListItem from '@mui/joy/ListItem';
-import ListItemButton from '@mui/joy/ListItemButton';
-import ListDivider from '@mui/joy/ListDivider';
-import Typography, { typographyClasses } from '@mui/joy/Typography';
-import Dropdown, { DropdownProps } from '@mui/joy/Dropdown';
-import MenuButton from '@mui/joy/MenuButton';
-import { Theme } from '@mui/joy';
-
-import MenuBarButton from './menubarcode';
-
-
-
-const codeString = `import * as React from 'react';
+import * as React from 'react';
 import Menu from '@mui/joy/Menu';
 import MenuItem, { menuItemClasses } from '@mui/joy/MenuItem';
 import List from '@mui/joy/List';
@@ -64,7 +36,7 @@ const MenuBarButton = React.forwardRef(
         {React.cloneElement(menu, {
           slotProps: {
             listbox: {
-              id: toolbar-example-menu-
+              id: `toolbar-example-menu-${children}`,
               'aria-label': children,
             },
           },
@@ -76,11 +48,11 @@ const MenuBarButton = React.forwardRef(
             boxShadow: '0 2px 8px 0px rgba(0 0 0 / 0.38)',
             '--List-padding': 'var(--ListDivider-gap)',
             '--ListItem-minHeight': '32px',
-            [&& .]: {
+            [`&& .${menuItemClasses.root}`]: {
               transition: 'none',
               '&:hover': {
                 ...theme.variants.solid.primary,
-                []: {
+                [`& .${typographyClasses.root}`]: {
                   color: 'inherit',
                 },
               },
@@ -289,218 +261,3 @@ export default function MenuToolbarExample() {
     </List>
   );
 }
-`
-const codeString1 = `import Menu from '@mui/joy/Menu';
-import MenuItem, { menuItemClasses } from '@mui/joy/MenuItem';
-import List from '@mui/joy/List';
-import ListItem from '@mui/joy/ListItem';
-import ListItemButton from '@mui/joy/ListItemButton';
-import ListDivider from '@mui/joy/ListDivider';
-import Typography, { typographyClasses } from '@mui/joy/Typography';
-import Dropdown, { DropdownProps } from '@mui/joy/Dropdown';
-import MenuButton from '@mui/joy/MenuButton';
-import { Theme } from '@mui/joy';`
-
-const codeString2 = ` <MenuBarButton
-open={menuIndex === 0}
-onOpen={() => {
-  setMenuIndex((prevMenuIndex) => (prevMenuIndex === null ? 0 : null));
-}}
-onKeyDown={createHandleButtonKeyDown(0)}
-onMouseEnter={() => {
-  if (typeof menuIndex === 'number') {
-    setMenuIndex(0);
-  }
-}}
-ref={(instance) => {
-  menus.current[0] = instance!;
-}}
-menu={
-  <Menu
-    onClose={() => {
-      menus.current[0]?.focus();
-    }}
-  >
-    <ListItem nested>
-      <List aria-label="New">
-        <MenuItem {...itemProps}>New File</MenuItem>
-        <MenuItem {...itemProps}>
-          New Text File... {renderShortcut('⌥ ⌘ N')}
-        </MenuItem>
-        <MenuItem {...itemProps}>
-          New Window {renderShortcut('⇧ ⌘ N')}
-        </MenuItem>
-      </List>
-    </ListItem>
-    <ListDivider />
-    <ListItem nested>
-      <List aria-label="Open">
-        <MenuItem {...itemProps}>Open {renderShortcut('⌘ O')}</MenuItem>
-        <MenuItem {...itemProps}>Open Folder</MenuItem>
-      </List>
-    </ListItem>
-  </Menu>
-}
->
-File
-</MenuBarButton>`
-
-const  Menubar  = () => {
-
-
-  const [open, setOpen] = React.useState(false);
-
-  const [value, setValue] = React.useState('1');
-
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
-
-
-  
-
-
-
-
-  return (
-    <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
-
-    <b><h1 style={{fontSize:'2rem'}}>Menu Bar</h1></b>
-    
-    <p style={{color:"#99999F"}}>A visually persistent menu common in desktop applications <br /> that provides quick access to a consistent set of commands.</p>
-    
-    
-     <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
-      Radix UI
-    </Button>
-    <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize",padding:'0rem 1rem'}} >
-      API Reference
-    </Button>
-    
-    
-    
-    
-    
-    
-    <Box sx={{ width: '663px',   typography: 'body1' }}>
-      <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Preview" value="1" />
-            <Tab label="Code" value="2" />
-            
-          </TabList>
-        </Box>
-        <div style={{border:"1px solid #F1F1F1",  marginTop:"2rem",  width:"675px", borderRadius:"0.5rem"}}>
-    
-        <TabPanel value="1">
-        <div style={{width:"609px", height:"400px", display:"flex",alignItems:"center",justifyContent:"center"}}>
-    
-    
-          
-            
-              
-        
-              
-        
-    
-    <MenuBarButton/>
-        
-    
-    
-    
-        
-      
-    
-        </div>
-        
-        </TabPanel>
-        </div>
-        <TabPanel value="2">   
-         <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
-            padding: '25px' ,
-            borderRadius: '10px', 
-            width: '620px',
-            height:'400px'
-            
-    
-        }}>
-          {codeString}
-        </SyntaxHighlighter></TabPanel>
-        
-      </TabContext>
-    </Box>
-    
-    
-
-    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
-    
-    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
-    
-    
-    
-    
-    
-    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
-    
-    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
-    
-    <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
-          
-            borderRadius: '10px', 
-            width: '680px',
-            height:'300px'
-            
-    
-        }}>
-          {codeString1}
-        </SyntaxHighlighter>
-    
-    
-    
-        
-    <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
-          
-          borderRadius: '10px', 
-          width: '680px',
-          height:'1000px',
-          marginTop:"1.7rem",
-          
-    
-      }}>
-        {codeString2}
-      </SyntaxHighlighter>
-    
-    
-    
-    
-    
-    </div>
-  )
-}
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-export default Menubar

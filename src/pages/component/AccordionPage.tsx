@@ -101,13 +101,13 @@ const AccordionPage = () => {
 
 
   return (
-    <Box sx={{padding:'50px'}}  style={{paddingTop:"2rem", paddingLeft:"2rem"}}>
+    <Box sx={{padding:'50px'}}  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
 
 <b><h4 style={{fontSize:'2rem'}}>Accordion</h4></b>
 
       
-      <p>A vertically stacked set of interactive headings <br /> that each reveal a section of content</p>
+      <p style={{color:"#99999F"}}>A vertically stacked set of interactive headings <br /> that each reveal a section of content</p>
 
       <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
       Radix UI

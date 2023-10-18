@@ -82,10 +82,10 @@ const ButtonPage = (props: Props) => {
 
 
   return (
-    <div style={{paddingTop:"2.5rem", paddingLeft:"2rem"}}>
+    <div style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
       <b><h1 style={{fontSize:'2rem'}}>Button</h1></b>
 
-     <p>Displays a button or a component that looks like a button.</p>
+     <p style={{color:"#99999F"}}>Displays a button or a component that looks like a button.</p>
 
     <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
       Radix UI

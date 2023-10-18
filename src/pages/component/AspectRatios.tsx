@@ -80,11 +80,11 @@ const AspectRatios = () => {
 
 
   return (
-    <div style={{paddingTop:"2.5rem", paddingLeft:"2rem"}}>
+    <div style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
     <b><h1 style={{fontSize:'2rem'}}>Aspect Ratio</h1></b>
 
-    <p>Displays content within a desired ratio.</p>
+    <p style={{color:"#99999F"}}>Displays content within a desired ratio.</p>
 
     
      <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >

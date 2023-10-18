@@ -181,14 +181,14 @@ const AlertDialog = () => {
 
 
   return (
-    <div style={{paddingTop:"2.5rem", paddingLeft:"2rem"}}>
+    <div style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
 
 
 
 <b><h1 style={{fontSize:'2rem'}}>Alert Dialog</h1></b>
 
-<p>A modal dialog that interrupts the user with <br /> important content and expects a response.</p>
+<p style={{color:"#99999F"}}>A modal dialog that interrupts the user with <br /> important content and expects a response.</p>
 
 <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
       Radix UI

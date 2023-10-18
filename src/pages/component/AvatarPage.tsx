@@ -71,11 +71,11 @@ const AvatarPage = () => {
 
 
   return (
-    <div  style={{paddingTop:"2.5rem", paddingLeft:"2rem"}}>
+    <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
 <b><h1 style={{fontSize:'2rem'}}>Avatar</h1></b>
 
-<p>An image element with a fallback for representing the user.</p>
+<p style={{color:"#99999F"}}>An image element with a fallback for representing the user.</p>
 
 
  <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >

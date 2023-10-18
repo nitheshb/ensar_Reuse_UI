@@ -15,32 +15,14 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
 const codeString = `
-import * as React from 'react';
-import Avatar from '@mui/joy/Avatar';
-import Box from '@mui/joy/Box';
 
-export default function ImageAvatars() {
-  return (
-    <Box sx={{ display: 'flex', gap: 2 }}>
-      <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-      <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-      <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-    </Box>
-  );
-}
 `
 const codeString1 = `
-import * as React from 'react';
-import Avatar from '@mui/joy/Avatar';
-import Box from '@mui/joy/Box';
+
 `
 
 const codeString2 = `
-<Box sx={{ display: 'flex', gap: 2 }}>
-<Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-<Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-<Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-</Box>
+
 `
 
 const  DataTable  = () => {
@@ -59,11 +41,11 @@ const  DataTable  = () => {
 
 
   return (
-    <div  style={{paddingTop:"2.5rem", paddingLeft:"2rem"}}>
+    <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
-    <b><h1 style={{fontSize:'2rem'}}></h1></b>
+    <b><h1 style={{fontSize:'2rem'}}>Data Table</h1></b>
     
-    <p></p>
+    <p style={{color:"#99999F"}}>Powerful table and datagrids built using TanStack Table.</p>
     
     
      <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
@@ -128,6 +110,10 @@ const  DataTable  = () => {
     </Box>
     
     
+
+    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
     
@@ -170,6 +156,25 @@ const  DataTable  = () => {
     </div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+
 
 
 

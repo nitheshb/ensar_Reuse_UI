@@ -3,7 +3,6 @@ import {  Box } from '@mui/material';
 import './styles.css';
 import '../../tail.css';
 
-
 import Tab from '@mui/material/Tab';
 import { Button } from '@mui/material';
 import TabContext from '@mui/lab/TabContext';
@@ -11,18 +10,6 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
-
-
-
-
-
-
-import Grid from '@mui/material/Grid';
-
-import IconButton from '@mui/material/IconButton';
-import HomeIcon from '@mui/icons-material/Home';
-
 
 
 
@@ -39,7 +26,7 @@ const codeString2 = `
 
 `
 
-const   Scrollarea = () => {
+const  Scrollarea  = () => {
 
 
   const [open, setOpen] = React.useState(false);
@@ -55,11 +42,11 @@ const   Scrollarea = () => {
 
 
   return (
-    <div  style={{paddingTop:"2.5rem", paddingLeft:"2rem"}}>
+    <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
-    <b><h1 style={{fontSize:'2rem'}}></h1></b>
+    <b><h1 style={{fontSize:'2rem'}}>Scroll-area</h1></b>
     
-    <p></p>
+    <p style={{color:"#99999F"}}>Augments native scroll functionality for custom, cross-browser styling.</p>
     
     
      <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
@@ -124,6 +111,10 @@ const   Scrollarea = () => {
     </Box>
     
     
+
+    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
     
@@ -132,11 +123,8 @@ const   Scrollarea = () => {
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
- 
     
     <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
-
-
           
             borderRadius: '10px', 
             width: '680px',
@@ -145,8 +133,6 @@ const   Scrollarea = () => {
     
         }}>
           {codeString1}
-
-         
         </SyntaxHighlighter>
     
     
@@ -187,6 +173,17 @@ const   Scrollarea = () => {
   
 
   
+
+
+
+
+
+
+
+
+
+
+
 
 
 export default Scrollarea
