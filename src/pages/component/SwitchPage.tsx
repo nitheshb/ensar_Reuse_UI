@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {  Box } from '@mui/material';
 import './styles.css';
 import '../../tail.css';
@@ -12,8 +12,61 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
+
+import './copystyle.css';
+
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
+
 import Switch from '@mui/material/Switch';
 
+
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import StepContent from '@mui/material/StepContent';
+
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+
+import InstallSwitchs from '../install/installSwitch';
+ 
+
+const codeString3 =`yarn add @radix-ui/react-switch`
+
+const codeString4 = `"use client"
+
+import * as React from "react"
+import * as SwitchPrimitives from "@radix-ui/react-switch"
+
+import { cn } from "@/lib/utils"
+
+const Switch = React.forwardRef<
+  React.ElementRef<typeof SwitchPrimitives.Root>,
+  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
+>(({ className, ...props }, ref) => (
+  <SwitchPrimitives.Root
+    className={cn(
+      "peer inline-flex h-[20px] w-[36px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
+      className
+    )}
+    {...props}
+    ref={ref}
+  >
+    <SwitchPrimitives.Thumb
+      className={cn(
+        "pointer-events-none block h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+      )}
+    />
+  </SwitchPrimitives.Root>
+))
+Switch.displayName = SwitchPrimitives.Root.displayName
+
+export { Switch }
+`
 
 
 const codeString = `import * as React from 'react';
@@ -43,7 +96,17 @@ onChange={handleChange}
 inputProps={{ 'aria-label': 'controlled' }}
 />`
 
+
+
+
+
+
+
+
+
+
 const  SwitchPage  = () => {
+
 
 
   
@@ -65,6 +128,12 @@ const  SwitchPage  = () => {
 
 
 
+  const [copy,setCopy] = useState(false);
+
+  const handleCopy = () => {
+    
+    console.log('Code copied to clipboard');
+  };
 
 
   return (
@@ -125,8 +194,12 @@ const  SwitchPage  = () => {
         
         </TabPanel>
         </div>
-        <TabPanel  value="2">   
-         <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
+        <TabPanel  value="2"> 
+
+        <div className="parentDiv">
+
+
+        <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
             padding: '25px' ,
             borderRadius: '10px', 
             width: '620px',
@@ -135,13 +208,43 @@ const  SwitchPage  = () => {
     
         }}>
           {codeString}
-        </SyntaxHighlighter></TabPanel>
+        </SyntaxHighlighter>
+          
+          
+          </div> 
+
+
+
+
+
+</TabPanel>
         
       </TabContext>
     </Box>
     
     
+    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
     
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
+
+    <InstallSwitchs/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
     
     
     
@@ -149,21 +252,88 @@ const  SwitchPage  = () => {
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
+
+
+    <div className="parentDiv">
+
+    {!copy ? (
+          <CopyToClipboard  text={codeString}>
+      
+          <button className='copyButton'><ContentCopyIcon/></button>
+          
+        </CopyToClipboard>
+    ):(
+
+  <CopyToClipboard  text={codeString}>
+      
+  <button className='copyButton'><LibraryAddCheckIcon/></button>
+  
+   </CopyToClipboard>
+  )}
+
+
+
     
+    {!copy ? (
+          <CopyToClipboard  text={codeString1}>
+      
+          <button className='copyButton'><ContentCopyIcon/></button>
+          
+        </CopyToClipboard>
+    ):(
+
+  <CopyToClipboard  text={codeString1}>
+      
+  <button className='copyButton'><LibraryAddCheckIcon/></button>
+  
+   </CopyToClipboard>
+  )}
+
+
+
+
     <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
           
-            borderRadius: '10px', 
-            width: '680px',
-            height:'50px'
-            
+          borderRadius: '10px', 
+          width: '680px',
+          height:'50px'
+          
+  
+      }}>
+        {codeString1}
+      </SyntaxHighlighter>
+    </div>
     
-        }}>
-          {codeString1}
-        </SyntaxHighlighter>
+
+    
+    
+    <div className='parentDiv'>
+
     
     
     
-        
+    {!copy ? (
+          <CopyToClipboard  text={codeString2}>
+      
+          <button className='copyButton'><ContentCopyIcon/></button>
+          
+        </CopyToClipboard>
+    ):(
+
+  <CopyToClipboard  text={codeString2}>
+      
+  <button className='copyButton'><LibraryAddCheckIcon/></button>
+  
+   </CopyToClipboard>
+  )}
+
+      
+
+
+
+
+
+
     <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
           
           borderRadius: '10px', 
@@ -175,6 +345,11 @@ const  SwitchPage  = () => {
       }}>
         {codeString2}
       </SyntaxHighlighter>
+
+
+    </div>
+        
+
     
     
     

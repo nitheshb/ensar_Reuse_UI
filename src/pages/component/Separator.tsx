@@ -19,6 +19,16 @@ import HomeIcon from '@mui/icons-material/Home';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import GrainIcon from '@mui/icons-material/Grain';
 
+import './copystyle.css';
+
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
+
+
+import InstallSeparator from '../install/InstallSeparator';
 
 function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
   event.preventDefault();
@@ -209,7 +219,7 @@ const  Separator  = () => {
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
-    
+    <InstallSeparator/>
     
     
     

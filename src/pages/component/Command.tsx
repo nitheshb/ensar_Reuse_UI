@@ -11,20 +11,101 @@ import TabPanel from '@mui/lab/TabPanel';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
+import Paper from '@mui/material/Paper';
+import Divider from '@mui/material/Divider';
+import MenuList from '@mui/material/MenuList';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Check from '@mui/icons-material/Check';
 
 
 
-const codeString = `
+
+const codeString = `import * as React from 'react';
+import Paper from '@mui/material/Paper';
+import Divider from '@mui/material/Divider';
+import MenuList from '@mui/material/MenuList';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Check from '@mui/icons-material/Check';
+
+export default function DenseMenu() {
+  return (
+    <Paper sx={{ width: 320 }}>
+      <MenuList dense>
+        <MenuItem>
+          <ListItemText inset>Single</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText inset>1.15</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText inset>Double</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Check />
+          </ListItemIcon>
+          Custom: 1.2
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemText>Add space before paragraph</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText>Add space after paragraph</ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemText>Custom spacing...</ListItemText>
+        </MenuItem>
+      </MenuList>
+    </Paper>
+  );
+}`
+const codeString1 = `import Paper from '@mui/material/Paper';
+import Divider from '@mui/material/Divider';
+import MenuList from '@mui/material/MenuList';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Check from '@mui/icons-material/Check';
 `
-const codeString1 = `
 
-`
+const codeString2 = `<Paper sx={{ width: 320 }}>
+<MenuList dense>
+  <MenuItem>
+    <ListItemText inset>Single</ListItemText>
+  </MenuItem>
+  <MenuItem>
+    <ListItemText inset>1.15</ListItemText>
+  </MenuItem>
+  <MenuItem>
+    <ListItemText inset>Double</ListItemText>
+  </MenuItem>
+  <MenuItem>
+    <ListItemIcon>
+      <Check />
+    </ListItemIcon>
+    Custom: 1.2
+  </MenuItem>
+  <Divider />
+  <MenuItem>
+    <ListItemText>Add space before paragraph</ListItemText>
+  </MenuItem>
+  <MenuItem>
+    <ListItemText>Add space after paragraph</ListItemText>
+  </MenuItem>
+  <Divider />
+  <MenuItem>
+    <ListItemText>Custom spacing...</ListItemText>
+  </MenuItem>
+</MenuList>
+</Paper>`
 
-const codeString2 = `
-
-`
-
-const Command = () => {
+const  Command  = () => {
 
 
   const [open, setOpen] = React.useState(false);
@@ -40,11 +121,11 @@ const Command = () => {
 
 
   return (
-    <div  style={{paddingTop:"2.5rem", paddingLeft:"2rem"}}>
+    <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
-    <b><h1 style={{fontSize:'2rem'}}>Checkbox</h1></b>
+    <b><h1 style={{fontSize:'2rem'}}>Command</h1></b>
     
-    <p>A control that allows the user to toggle between checked and not checked.</p>
+    <p style={{color:"#99999F"}}>Fast, composable, unstyled command menu for React.</p>
     
     
      <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
@@ -73,7 +154,36 @@ const Command = () => {
         <TabPanel value="1">
         <div style={{width:"609px", height:"400px", display:"flex",alignItems:"center",justifyContent:"center"}}>
     
-    
+        <Paper sx={{ width: 320 }}>
+      <MenuList dense>
+        <MenuItem>
+          <ListItemText inset>Single</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText inset>1.15</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText inset>Double</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Check />
+          </ListItemIcon>
+          Custom: 1.2
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemText>Add space before paragraph</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText>Add space after paragraph</ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemText>Custom spacing...</ListItemText>
+        </MenuItem>
+      </MenuList>
+    </Paper>
           
             
               
@@ -109,6 +219,10 @@ const Command = () => {
     </Box>
     
     
+
+    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
     
@@ -122,7 +236,7 @@ const Command = () => {
           
             borderRadius: '10px', 
             width: '680px',
-            height:'140px'
+            height:'190px'
             
     
         }}>
@@ -136,7 +250,7 @@ const Command = () => {
           
           borderRadius: '10px', 
           width: '680px',
-          height:'200px',
+          height:'760px',
           marginTop:"1.7rem",
           
     
@@ -151,5 +265,32 @@ const Command = () => {
     </div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
 
 export default Command

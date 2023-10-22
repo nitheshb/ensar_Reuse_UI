@@ -13,7 +13,13 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
 
+import './copystyle.css';
 
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
 
 const codeString = `
 

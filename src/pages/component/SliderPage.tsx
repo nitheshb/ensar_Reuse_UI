@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {  Box } from '@mui/material';
 import './styles.css';
 import '../../tail.css';
@@ -11,11 +11,18 @@ import TabPanel from '@mui/lab/TabPanel';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-
 import Slider from '@mui/material/Slider';
 
 
+import './copystyle.css';
 
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
+
+import InstallSlider from '../install/InstallSlider';
 
 const codeString = `import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -58,6 +65,12 @@ const  SliderPage  = () => {
     setValue(newValue);
   };
 
+  const [copy,setCopy] = useState(false);
+
+  const handleCopy = () => {
+    
+    console.log('Code copied to clipboard');
+  };
 
 
 
@@ -125,8 +138,27 @@ const  SliderPage  = () => {
         
         </TabPanel>
         </div>
-        <TabPanel value="2">   
-         <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
+        <TabPanel value="2"> 
+
+         <div className='parentDiv'>
+         {!copy ? (
+          <CopyToClipboard  text={codeString}>
+      
+          <button className='copyButton'><ContentCopyIcon/></button>
+          
+        </CopyToClipboard>
+    ):(
+
+  <CopyToClipboard  text={codeString}>
+      
+  <button className='copyButton'><LibraryAddCheckIcon/></button>
+  
+   </CopyToClipboard>
+  )}
+
+
+
+<SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
             padding: '25px' ,
             borderRadius: '10px', 
             width: '620px',
@@ -135,7 +167,13 @@ const  SliderPage  = () => {
     
         }}>
           {codeString}
-        </SyntaxHighlighter></TabPanel>
+        </SyntaxHighlighter>
+         </div>
+
+
+
+        
+        </TabPanel>
         
       </TabContext>
     </Box>
@@ -147,28 +185,82 @@ const  SliderPage  = () => {
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
-    
+    <InstallSlider/>
     
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
+  
+    
+    
+    <div className='parentDiv'>
+
+
+    {!copy ? (
+          <CopyToClipboard  text={codeString1}>
+      
+          <button className='copyButton'><ContentCopyIcon/></button>
+          
+        </CopyToClipboard>
+    ):(
+
+  <CopyToClipboard  text={codeString1}>
+      
+  <button className='copyButton'><LibraryAddCheckIcon/></button>
+  
+   </CopyToClipboard>
+  )}
+
+
+
+
+
     <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
           
-            borderRadius: '10px', 
-            width: '680px',
-            height:'50px'
-            
-    
-        }}>
-          {codeString1}
-        </SyntaxHighlighter>
-    
-    
-    
+          borderRadius: '10px', 
+          width: '680px',
+          height:'50px'
+          
+  
+      }}>
+        {codeString1}
+      </SyntaxHighlighter>
+
+
+
+
+
+
+
+    </div>
         
-    <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
+
+
+      
+     <div className='parentDiv'>
+
+     
+     
+{!copy ? (
+          <CopyToClipboard  text={codeString2}>
+      
+          <button className='copyButton'><ContentCopyIcon/></button>
+          
+        </CopyToClipboard>
+    ):(
+
+  <CopyToClipboard  text={codeString2}>
+      
+  <button className='copyButton'><LibraryAddCheckIcon/></button>
+  
+   </CopyToClipboard>
+  )}
+
+
+
+<SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
           
           borderRadius: '10px', 
           width: '680px',
@@ -179,6 +271,10 @@ const  SliderPage  = () => {
       }}>
         {codeString2}
       </SyntaxHighlighter>
+      </div>
+
+    
+
     
     
     

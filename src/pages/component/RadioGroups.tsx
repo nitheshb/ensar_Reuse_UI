@@ -18,7 +18,15 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
+import './copystyle.css';
 
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
+
+import InstallRadio from '../install/InstallRadio';
 
 const codeString = `import * as React from 'react';
 import Radio from '@mui/material/Radio';
@@ -160,7 +168,7 @@ Default" />
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
-    
+    <InstallRadio/>
     
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 

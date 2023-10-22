@@ -15,6 +15,7 @@ import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 
 import Input from '@mui/joy/Input';
 
+import InstallInput from '../install/InstallInput';
 
 const codeString = `
 import { Input } from "@/components/ui/input"
@@ -111,10 +112,14 @@ const  Inputs  = () => {
       </TabContext>
     </Box>
     
+
+    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
     
-    
+    <InstallInput/>
     
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {  Box } from '@mui/material';
-import './styles.css';
+import './style1.css';
 import '../../tail.css';
 
 import Tab from '@mui/material/Tab';
@@ -11,22 +11,30 @@ import TabPanel from '@mui/lab/TabPanel';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-import Menu from '@mui/joy/Menu';
-import MenuItem, { menuItemClasses } from '@mui/joy/MenuItem';
-import List from '@mui/joy/List';
-import ListItem from '@mui/joy/ListItem';
-import ListItemButton from '@mui/joy/ListItemButton';
-import ListDivider from '@mui/joy/ListDivider';
-import Typography, { typographyClasses } from '@mui/joy/Typography';
-import Dropdown, { DropdownProps } from '@mui/joy/Dropdown';
-import MenuButton from '@mui/joy/MenuButton';
-import { Theme } from '@mui/joy';
 
-import MenuBarButton from './menubarcode';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import StepContent from '@mui/material/StepContent';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 
-import InstallMenu from '../install/InstallMenu';
 
-const codeString = `import * as React from 'react';
+
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
+
+
+
+
+const codeString = `npx @mui/material add menu`
+const codeString1 = `yarn add @mui/material react-menu`
+
+const codeString2 = `
+import * as React from 'react';
 import Menu from '@mui/joy/Menu';
 import MenuItem, { menuItemClasses } from '@mui/joy/MenuItem';
 import List from '@mui/joy/List';
@@ -290,62 +298,27 @@ export default function MenuToolbarExample() {
   );
 }
 `
-const codeString1 = `import Menu from '@mui/joy/Menu';
-import MenuItem, { menuItemClasses } from '@mui/joy/MenuItem';
-import List from '@mui/joy/List';
-import ListItem from '@mui/joy/ListItem';
-import ListItemButton from '@mui/joy/ListItemButton';
-import ListDivider from '@mui/joy/ListDivider';
-import Typography, { typographyClasses } from '@mui/joy/Typography';
-import Dropdown, { DropdownProps } from '@mui/joy/Dropdown';
-import MenuButton from '@mui/joy/MenuButton';
-import { Theme } from '@mui/joy';`
 
-const codeString2 = ` <MenuBarButton
-open={menuIndex === 0}
-onOpen={() => {
-  setMenuIndex((prevMenuIndex) => (prevMenuIndex === null ? 0 : null));
-}}
-onKeyDown={createHandleButtonKeyDown(0)}
-onMouseEnter={() => {
-  if (typeof menuIndex === 'number') {
-    setMenuIndex(0);
-  }
-}}
-ref={(instance) => {
-  menus.current[0] = instance!;
-}}
-menu={
-  <Menu
-    onClose={() => {
-      menus.current[0]?.focus();
-    }}
-  >
-    <ListItem nested>
-      <List aria-label="New">
-        <MenuItem {...itemProps}>New File</MenuItem>
-        <MenuItem {...itemProps}>
-          New Text File... {renderShortcut('⌥ ⌘ N')}
-        </MenuItem>
-        <MenuItem {...itemProps}>
-          New Window {renderShortcut('⇧ ⌘ N')}
-        </MenuItem>
-      </List>
-    </ListItem>
-    <ListDivider />
-    <ListItem nested>
-      <List aria-label="Open">
-        <MenuItem {...itemProps}>Open {renderShortcut('⌘ O')}</MenuItem>
-        <MenuItem {...itemProps}>Open Folder</MenuItem>
-      </List>
-    </ListItem>
-  </Menu>
-}
->
-File
-</MenuBarButton>`
+const  InstallMenu  = () => {
 
-const  Menubar  = () => {
+
+    const tabPanelStyle = {
+        padding: 0,
+      };
+
+      const tabPanelStyles = {
+        color:"#18181B",
+        borderColor: 'divider',
+    
+        
+        
+      };
+
+      const stepstyle ={
+        color:"#F4F4F5",
+        
+      };
+
 
 
   const [open, setOpen] = React.useState(false);
@@ -356,120 +329,254 @@ const  Menubar  = () => {
     setValue(newValue);
   };
 
+  
+  const [copy,setCopy] = useState(false);
+
+  const handleCopy = () => {
+    
+    console.log('Code copied to clipboard');
+  };
+
+
+
+
+  const steps = [
+    {
+      label: 'Install the following dependencies:',
+      description: <div className='parentDiv'>
+
+    
+      {!copy ? (
+            <CopyToClipboard  text={codeString1}>
+        
+            <button className='copybtn'><ContentCopyIcon/></button>
+            
+          </CopyToClipboard>
+      ):(
+      
+      <CopyToClipboard  text={codeString1}>
+        
+      <button className='copybtn'><LibraryAddCheckIcon/></button>
+      
+      </CopyToClipboard>
+      )}
+      
+        
+      
+      
+      
+      
+      
+      
+      <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
+            
+            borderRadius: '10px', 
+            width: '650px',
+            height:'50px',
+            marginTop:"1.7rem",
+            
+      
+        }}>
+          {codeString1}
+        </SyntaxHighlighter>
+      
+      
+      </div>,
+    },
+    {
+      label: 'Copy and paste the following code into your project.',
+      description: <div className='parentDiv'>
+
+    
+      {!copy ? (
+            <CopyToClipboard  text={codeString2}>
+        
+            <button className='copybtn'><ContentCopyIcon/></button>
+            
+          </CopyToClipboard>
+      ):(
+      
+      <CopyToClipboard  text={codeString2}>
+        
+      <button className='copybtn'><LibraryAddCheckIcon/></button>
+      
+      </CopyToClipboard>
+      )}
+      
+        
+      
+      
+      
+      
+      
+      
+      <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
+            
+            borderRadius: '10px', 
+            width: '650px',
+            height:'500px',
+            marginTop:"1.7rem",
+            
+      
+        }}>
+          {codeString2}
+        </SyntaxHighlighter>
+      
+      
+      </div>,
+    },
+    {
+      label: 'Update the import paths to match your project setup.',
+      description: ``,
+    },
+  ];
+  
+  
+    const [activeStep, setActiveStep] = React.useState(0);
+  
+    const handleNext = () => {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    };
+  
+    const handleBack = () => {
+      setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+  
+    const handleReset = () => {
+      setActiveStep(0);
+    };
+
+
+
+
+  return (
+    <div  style={{paddingTop:"0rem", paddingLeft:"0rem"}}>
+
+    
+    <Box sx={{ width: '690px',   typography: 'body1' }}>
+      <TabContext   value={value}>
+        <Box style={tabPanelStyles}   sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList style={tabPanelStyles}  onChange={handleChange} aria-label="lab API tabs example">
+            <Tab style={tabPanelStyles}  label="CLI" value="1" />
+            <Tab style={tabPanelStyles}  label="Manual" value="2" />
+            
+          </TabList>
+        </Box>
+        <div>
+    
+        <TabPanel style={tabPanelStyle}  value="1">
+        <div style={{width:"400px", height:"100px", display:"flex",alignItems:"flex-start"}}>
+
+
+        <div className='parentDiv'>
+
+    
+    
+    
+{!copy ? (
+      <CopyToClipboard  text={codeString2}>
+  
+      <button className='copyButtons'><ContentCopyIcon/></button>
+      
+    </CopyToClipboard>
+):(
+
+<CopyToClipboard  text={codeString2}>
+  
+<button className='copyButtons'><LibraryAddCheckIcon/></button>
+
+</CopyToClipboard>
+)}
 
   
 
 
 
 
-  return (
-    <div  style={{paddingTop:"1rem", paddingLeft:"2rem"}}>
 
-    <b><h1 style={{fontSize:'2rem'}}>Menu Bar</h1></b>
-    
-    <p style={{color:"#99999F"}}>A visually persistent menu common in desktop applications <br /> that provides quick access to a consistent set of commands.</p>
-    
-    
-     <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize", margin:'1rem',padding:'0rem 1rem'}} >
-      Radix UI
-    </Button>
-    <Button sx={{color:"#191717", backgroundColor:"#EEEEEE",textTransform:"capitalize",padding:'0rem 1rem'}} >
-      API Reference
-    </Button>
-    
-    
-    
-    
-    
-    
-    <Box sx={{ width: '663px',   typography: 'body1' }}>
-      <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Preview" value="1" />
-            <Tab label="Code" value="2" />
-            
-          </TabList>
-        </Box>
-        <div style={{border:"1px solid #F1F1F1",  marginTop:"2rem",  width:"675px", borderRadius:"0.5rem"}}>
-    
-        <TabPanel value="1">
-        <div style={{width:"609px", height:"400px", display:"flex",alignItems:"center",justifyContent:"center"}}>
+
+    <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
+      
+      borderRadius: '10px', 
+      width: '690px',
+      height:'50px',
+      marginTop:"1.7rem",
+      
+
+     }}>
+     {codeString}
+     </SyntaxHighlighter>
+
+
+    </div>
     
     
-          
-            
-              
-        
-              
-        
-    
-    <MenuBarButton/>
-        
-    
-    
-    
-        
+
       
     
         </div>
         
         </TabPanel>
         </div>
-        <TabPanel value="2">   
-         <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
-            padding: '25px' ,
-            borderRadius: '10px', 
-            width: '620px',
-            height:'400px'
+
+
+
+
+        <TabPanel style={tabPanelStyle} value="2">   
+        <Box sx={{ maxWidth: 690 }}>
+      <Stepper style={stepstyle}  activeStep={activeStep} orientation="vertical">
+        {steps.map((step, index) => (
+          <Step   key={step.label}>
+            <StepLabel 
             
-    
-        }}>
-          {codeString}
-        </SyntaxHighlighter></TabPanel>
+              optional={
+                index === 2 ? (
+                  <Typography variant="caption"></Typography>
+                ) : null
+              }
+            >
+              {step.label}
+            </StepLabel>
+            <StepContent  sx={{padding:2}}>
+              <Typography >{step.description}</Typography>
+              <Box sx={{ mb: 2 }}>
+                <div>
+                  <Button
+                    variant="contained"
+                    onClick={handleNext}
+                    sx={{ marginLeft: 29, mt: 1, mr: 1, backgroundColor:"#C7C7C8" }}
+                  >
+                    {index === steps.length - 1 ? 'Finish' : 'Continue'}
+                  </Button>
+                  <Button
+                    disabled={index === 0}
+                    onClick={handleBack}
+                    sx={{ mt: 1, mr: 1 }}
+                  >
+                    
+                  </Button>
+                </div>
+              </Box>
+            </StepContent>
+          </Step>
+        ))}
+      </Stepper>
+      {activeStep === steps.length && (
+        <Paper square elevation={0} sx={{ p: 3 }}>
+          
+          <Button  onClick={handleReset} sx={{ mt: 1, mr: 1, color:"#09090B" }}>
+            Reset
+          </Button>
+        </Paper>
+      )}
+    </Box>
+        </TabPanel>
         
       </TabContext>
     </Box>
     
     
 
-    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
-    
-    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
-    
-    
-    <InstallMenu/>
-    
-    
-    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
-    
-    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
-    
-    <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
-          
-            borderRadius: '10px', 
-            width: '680px',
-            height:'300px'
-            
-    
-        }}>
-          {codeString1}
-        </SyntaxHighlighter>
-    
-    
-    
-        
-    <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
-          
-          borderRadius: '10px', 
-          width: '680px',
-          height:'1000px',
-          marginTop:"1.7rem",
-          
-    
-      }}>
-        {codeString2}
-      </SyntaxHighlighter>
     
     
     
@@ -498,9 +605,4 @@ const  Menubar  = () => {
 
 
 
-
-
-
-
-
-export default Menubar
+export default InstallMenu

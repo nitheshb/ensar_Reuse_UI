@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {  Box } from '@mui/material';
 import './styles.css';
 import '../../tail.css';
@@ -16,6 +16,17 @@ import Stack from '@mui/material/Stack';
 
 
 
+
+import './copystyle.css';
+
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
+
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+
+import InstallSkeleton from '../install/InstallSkeleton';
 
 const codeString = `import * as React from 'react';
 import Skeleton from '@mui/material/Skeleton';
@@ -51,6 +62,13 @@ const  SkeletonPage  = () => {
   };
 
 
+
+  const [copy,setCopy] = useState(false);
+
+  const handleCopy = () => {
+    
+    console.log('Code copied to clipboard');
+  };
 
 
 
@@ -130,6 +148,8 @@ const  SkeletonPage  = () => {
         
       </TabContext>
     </Box>
+
+
     
     
     
@@ -137,27 +157,66 @@ const  SkeletonPage  = () => {
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
-    
+    <InstallSkeleton/>
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
-    
-    <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
+
+
+    <div className="parentDiv">
+    {!copy ? (
+          <CopyToClipboard  text={codeString1}>
+      
+          <button className='copyButton'><ContentCopyIcon/></button>
           
-            borderRadius: '10px', 
-            width: '680px',
-            height:'50px'
-            
+        </CopyToClipboard>
+    ):(
+
+  <CopyToClipboard  text={codeString1}>
+      
+  <button className='copyButton'><LibraryAddCheckIcon/></button>
+  
+   </CopyToClipboard>
+  )}
+
+
+<SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
+          
+          borderRadius: '10px', 
+          width: '680px',
+          height:'50px'
+          
+  
+      }}>
+        {codeString1}
+      </SyntaxHighlighter>
+
+    </div>
     
-        }}>
-          {codeString1}
-        </SyntaxHighlighter>
-    
-    
-    
-        
-    <SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
+
+
+
+
+
+    <div className="parentDiv">
+    {!copy ? (
+          <CopyToClipboard  text={codeString1}>
+      
+          <button className='copyButton'><ContentCopyIcon/></button>
+          
+        </CopyToClipboard>
+    ):(
+
+  <CopyToClipboard  text={codeString1}>
+      
+  <button className='copyButton'><LibraryAddCheckIcon/></button>
+  
+   </CopyToClipboard>
+  )}
+
+
+<SyntaxHighlighter language="tsx" style={atomOneDark} customStyle={{
           
           borderRadius: '10px', 
           width: '680px',
@@ -168,6 +227,14 @@ const  SkeletonPage  = () => {
       }}>
         {codeString2}
       </SyntaxHighlighter>
+
+    </div>
+        
+    
+    
+    
+        
+
     
     
     

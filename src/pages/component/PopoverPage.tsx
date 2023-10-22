@@ -15,7 +15,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import BasicPopover from './Pop';
 
 
-
+import InstallPopover from '../install/InstallPopover';
 
 const codeString = `import * as React from 'react';
 import Popover from '@mui/material/Popover';
@@ -170,7 +170,7 @@ const  PopoverPage  = () => {
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
-    
+    <InstallPopover/>
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
     

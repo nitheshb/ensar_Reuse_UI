@@ -1,0 +1,43 @@
+.line{
+    width: 791px; 
+    height: 2px; 
+    opacity: 0.3;
+    background-color: #F5F5F5; 
+    margin: 10px 0; 
+}
+
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+
+.parentDiv{
+    position:relative;
+    }
+    
+.copyButton{
+    position:absolute;
+    right:540px;
+    top:20px;
+    color: #fff;
+    }
+
+
+
+    .copyButtons{
+        position:absolute;
+        right:10px;
+        top:33px;
+        color: #fff;
+        }
+
+
+.copybtn{
+    position:absolute;
+    right:10px;
+    top:13px;
+    color: #fff;
+}

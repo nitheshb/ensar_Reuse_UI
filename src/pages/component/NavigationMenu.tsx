@@ -15,6 +15,8 @@ import MenuBarButton from './DropdownMenu';
 
 import AboutMenu from './navigationmenucode';
 
+import InsatllNavigation from '../install/InsatllNavigation';
+
 
 const codeString = `import * as React from 'react';
 import { Popper } from '@mui/base/Popper';
@@ -542,7 +544,7 @@ const  NavigationMenu  = () => {
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
-    
+    <InsatllNavigation/>
     
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 

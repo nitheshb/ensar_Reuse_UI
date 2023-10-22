@@ -1,0 +1,10 @@
+.parentDiv{
+    position:relative;
+    }
+    
+    .copyButton{
+    position:absolute;
+    right:540px;
+    top:20px;
+    color: #fff;
+    }
