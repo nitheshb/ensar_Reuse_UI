@@ -18,6 +18,8 @@ import AlertTitle from '@mui/material/AlertTitle';
 import Stack from '@mui/material/Stack';
 
 
+import InstallAlertpage from '../install/InstallAlertpage';
+
 
 const codeString = `
 
@@ -162,6 +164,14 @@ const AlertPage = (props: Props) => {
   </TabContext>
 </Box>
 
+
+
+
+<b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
+    
+<InstallAlertpage/>
 
 <b><p style={{fontSize:"1.2rem",paddingTop:"1.5rem"}}>Usage</p></b>
 <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />

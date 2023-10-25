@@ -109,11 +109,49 @@ const  DataTable  = () => {
       </TabContext>
     </Box>
     
-    
 
-    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
+    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Introduction</p></b> 
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
+
+  <p style={{color:"#99999F"}}>Every data table or datagrid I've created has been unique. They all behave differently, <br /> have specific sorting and filtering requirements, and work with different data sources.</p> <br />
+  <p style={{color:"#99999F"}}>It doesn't make sense to combine all of these variations into a single component. If we <br /> do that, we'll lose the flexibility that headless UI provides</p> <br />
+  <p style={{color:"#99999F"}}>So instead of a data-table component, I thought it would be more helpful to provide a <br /> guide on how to build your own.</p> <br />
+  <p style={{color:"#99999F"}}>We'll start with the basic  component and build a complex data table from <br /> scratch.</p> <br />
+    
+    
+
+
+  <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Table of Contents</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
+
+    <p style={{color:"#99999F"}}>This guide will show you how to use TanStack Table and the  component to <br /> build your own custom data table. We'll cover the following topics:
+
+</p> <br />
+
+
+    <div>
+      <ul>
+        <li><u>Basic Table</u></li>
+        <li><u>Row Actions</u></li>
+        <li><u>Pagination</u></li>
+        <li><u>Sorting</u></li>
+        <li><u>Filtering</u></li>
+        <li><u>Visibility</u></li>
+        <li><u>Row Selection</u></li>
+        <li><u>Reusable Components</u></li>
+      </ul>
+    </div>
+
+
+
+    <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Introduction</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
+
+
+
     
     
     

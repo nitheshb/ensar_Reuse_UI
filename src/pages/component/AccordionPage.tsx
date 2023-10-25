@@ -27,6 +27,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import InstallAccordion from '../install/InstallAccordion';
 
 
 const codeString = `      <Accordion>
@@ -209,6 +210,13 @@ const AccordionPage = () => {
 
 
 
+
+<b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
+    
+
+<InstallAccordion/>
 
 
 

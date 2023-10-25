@@ -20,6 +20,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Check from '@mui/icons-material/Check';
 
 
+import InstallCommand from '../install/InstallCommand';
 
 
 const codeString = `import * as React from 'react';
@@ -224,7 +225,7 @@ const  Command  = () => {
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
-    
+    <InstallCommand/>
     
     
     

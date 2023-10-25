@@ -19,6 +19,8 @@ import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
 
+import InstallCard from '../install/InstallCard';
+
 
 const codeString = `import * as React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
@@ -251,7 +253,7 @@ const  CardPage  = () => {
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
-    
+    <InstallCard/>
     
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 

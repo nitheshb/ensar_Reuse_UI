@@ -15,7 +15,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 
-
+import InstallTextarea from '../install/InstallTextarea';
 
 
 
@@ -199,7 +199,7 @@ const  Textarea  = () => {
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
-    
+    <InstallTextarea/>
     
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 

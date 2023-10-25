@@ -17,6 +17,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 
+import InstallContextmenu from '../install/InstallContextmenu';
 
 
 
@@ -276,9 +277,14 @@ const ContextMenu = () => {
     </TabContext>
   </Box>
   
+
+  
+  <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
   
   
-  
+  <InstallContextmenu/>
   
   
   

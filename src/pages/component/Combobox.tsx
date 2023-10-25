@@ -19,6 +19,11 @@ import Autocomplete from '@mui/material/Autocomplete';
 import Popover from './PopoverPage';
 import Command from './Command';
 
+
+import InstallCombobox from '../install/InstallCombobox';
+
+
+
 const codeString = `import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -434,7 +439,7 @@ const Combobox = () => {
   
   
   
-  
+  <InstallCombobox/>
   
   
   

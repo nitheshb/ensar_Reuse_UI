@@ -14,7 +14,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import ExampleCollapsibleList from './collapsiblecode';
 
-
+import InstallCollapsible from '../install/InstallCollapsible';
 
 const codeString = `import * as React from 'react';
 import Box from '@mui/joy/Box';
@@ -440,7 +440,7 @@ const  Collapsible  = () => {
     
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
-    
+    <InstallCollapsible/>
     
     
     

@@ -16,6 +16,8 @@ import Done from '@mui/icons-material/Done';
 
 
 
+import InstallCheckbox from '../install/InstallCheckbox';
+
 const codeString = `import * as React from 'react';
 import Checkbox from '@mui/joy/Checkbox';
 import Done from '@mui/icons-material/Done';
@@ -167,7 +169,7 @@ const  CheckboxPage  = () => {
     
     
     
-    
+    <InstallCheckbox/>
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
     

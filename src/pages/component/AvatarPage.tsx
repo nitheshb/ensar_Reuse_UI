@@ -13,6 +13,8 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Avatar from '@mui/joy/Avatar';
 
 
+import InstallAvatar from '../install/InstallAvatar';
+
 const codeString = `
 import * as React from 'react';
 import Avatar from '@mui/joy/Avatar';
@@ -144,7 +146,14 @@ const AvatarPage = () => {
 
 
 
+<b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Installation</p></b> 
+    
+    <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
+    
 
+
+
+<InstallAvatar/>
 
 
 <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 

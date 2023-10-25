@@ -17,18 +17,30 @@ import { LocalizationProvider } from '@mui/x-date-pickers-pro';
 import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
 import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
 
-
+import InstallCalander from '../install/InstallCalander';
 
 
 const codeString = `
-
 `
 const codeString1 = `
 
 `
 
-const codeString2 = `
+const codeString2 = `import * as React from 'react';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { LocalizationProvider } from '@mui/x-date-pickers-pro';
+import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
+import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
 
+export default function BasicDateRangeCalendar() {
+  return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DateRangeCalendar']}>
+        <DateRangeCalendar />
+      </DemoContainer>
+    </LocalizationProvider>
+  );
+}
 `
 
 
@@ -130,7 +142,7 @@ const  CalendarPage  = () => {
     <hr style={{width:"680px",height:"2px",opacity:"0.3",backgroundColor:"#F5F5F5",margin:"10px 0" }} />
     
     
-    
+    <InstallCalander/>
     
     
     <b> <p style={{marginTop:"3rem",fontSize:"1.6rem"}}>Usage</p></b> 
