@@ -27,6 +27,7 @@ const MainLayout = () => {
           minHeight: "100vh",
           paddingTop:"5rem",
           backgroundColor: "#FFF"
+          
         }}
       >
         

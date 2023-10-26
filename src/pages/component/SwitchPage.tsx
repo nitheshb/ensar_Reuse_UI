@@ -33,6 +33,10 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 import InstallSwitchs from '../install/installSwitch';
+
+const tablabel = {
+  color:"#18181B"
+};
  
 
 const codeString3 =`yarn add @radix-ui/react-switch`
@@ -159,9 +163,9 @@ const  SwitchPage  = () => {
     <Box sx={{ width: '663px',   typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab style={{color:"black"}} label="Preview" value="1" />
-            <Tab label="Code" value="2" />
+          <TabList TabIndicatorProps={{sx:{backgroundColor: "#18181B"}}} onChange={handleChange} aria-label="lab API tabs example">
+            <Tab style={tablabel}  label="Preview" value="1" />
+            <Tab style={tablabel} label="Code" value="2" />
             
           </TabList>
         </Box>

@@ -20,6 +20,11 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 import InstallDatepicker from '../install/InstallDatepicker';
 
+const tablabel = {
+  color:"#18181B"
+};
+
+
 const codeString = `import * as React from 'react';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -95,9 +100,9 @@ const  DatePickers  = () => {
     <Box sx={{ width: '663px',   typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Preview" value="1" />
-            <Tab label="Code" value="2" />
+          <TabList TabIndicatorProps={{sx:{backgroundColor: "#18181B"}}} onChange={handleChange} aria-label="lab API tabs example">
+            <Tab style={tablabel} label="Preview" value="1" />
+            <Tab style={tablabel} label="Code" value="2" />
             
           </TabList>
         </Box>

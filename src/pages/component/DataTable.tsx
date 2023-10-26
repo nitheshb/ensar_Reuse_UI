@@ -11,7 +11,9 @@ import TabPanel from '@mui/lab/TabPanel';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-
+const tablabel = {
+  color:"#18181B"
+};
 
 
 const codeString = `
@@ -63,9 +65,9 @@ const  DataTable  = () => {
     <Box sx={{ width: '663px',   typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Preview" value="1" />
-            <Tab label="Code" value="2" />
+          <TabList TabIndicatorProps={{sx:{backgroundColor: "#18181B"}}} onChange={handleChange} aria-label="lab API tabs example">
+            <Tab style={tablabel} label="Preview" value="1" />
+            <Tab style={tablabel} label="Code" value="2" />
             
           </TabList>
         </Box>

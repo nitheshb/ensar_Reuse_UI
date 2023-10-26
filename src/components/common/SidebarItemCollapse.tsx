@@ -33,7 +33,7 @@ const SidebarItemCollapse = ({ item }: Props) => {
               backgroundColor: colorConfigs.sidebar.hoverBg
             },
             paddingY: "12px",
-            paddingX: "24px"
+            paddingX: "3px"
           }}
         >
           <ListItemIcon sx={{
@@ -49,9 +49,17 @@ const SidebarItemCollapse = ({ item }: Props) => {
               </Typography>
             }
           />
-          {open ? <ExpandLessOutlinedIcon /> : <ExpandMoreOutlinedIcon />}
+          {open ? <ExpandLessOutlinedIcon sx={{ color: '#FFF' }} /> : <ExpandMoreOutlinedIcon sx={{ color: '#FFF' }} />}
         </ListItemButton>
-        <Collapse in={open} timeout="auto">
+        <Collapse in={open} timeout="auto"         
+        
+        
+        sx={{
+            
+            
+          
+           
+        }}>
           <List>
             {item.child?.map((route, index) => (
               route.sidebarProps ? (

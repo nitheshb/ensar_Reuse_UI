@@ -6,9 +6,16 @@ import appRoutes from "../../routes/appRoutes";
 import SidebarItem from "./SidebarItem";
 import SidebarItemCollapse from "./SidebarItemCollapse";
 
+const scrollname = {
+  color:"#18181B"
+};
+
+
+
 const Sidebar = () => {
   return (
-    <Drawer
+    <Drawer 
+    className="scroll"
       variant="permanent"
       sx={{
         width: sizeConfigs.sidebar.width,
@@ -19,21 +26,50 @@ const Sidebar = () => {
           boxSizing: "border-box",
           borderRight: "0px",
           color:"#77777F",
-        
-        
-          
           paddingTop: "",
-          marginTop: "4.7rem"
-        }
+          marginTop: "4.7rem",
+          
+        },
+        "& .MuiButtonBase-root-MuiListItemButton-root":{
+          paddingLeft:"3px",
+        },
+
+
+
+
+
+
+
+        
+
+
       }}
     >
-      <List disablePadding>
-        <Toolbar sx={{ marginBottom: "10px" }}>
+      <List disablePadding  sx={{ maxHeight: "1200px",
+              overflowY: "auto",
+              '&::-webkit-scrollbar': {
+                width: '8px',
+              },
+              '&::-webkit-scrollbar-thumb': {
+                backgroundColor: '#F6F6F7',
+                borderRadius: '4px',
+                
+              },
+              '&::-webkit-scrollbar-track': {
+                backgroundColor: '#fff',
+              },
+              scrollbarWidth: 'thin',
+              scrollbarColor: 'rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.1)'}}>
+        <Toolbar
+         sx={{ marginBottom: "10px" }}
+         
+         
+         >
           <Stack
             sx={{ width: "100%" }}
             direction="row"
             justifyContent="center"
-                        //borderColor={"white"}
+                        
           >
 
             <p style={{marginRight:""}}><b>Getting Started</b></p>

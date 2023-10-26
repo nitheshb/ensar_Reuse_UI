@@ -16,6 +16,10 @@ import IconButton from '@mui/joy/IconButton';
 import Stack from '@mui/joy/Stack';
 import FormatBold from '@mui/icons-material/FormatBold';
 
+const tablabel = {
+  color:"#18181B"
+};
+
 const codeString = `import * as React from 'react';
 import Button from '@mui/joy/Button';
 import IconButton from '@mui/joy/IconButton';
@@ -133,9 +137,9 @@ const  Toggle  = () => {
     <Box sx={{ width: '663px',   typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Preview" value="1" />
-            <Tab label="Code" value="2" />
+          <TabList TabIndicatorProps={{sx:{backgroundColor: "#18181B"}}} onChange={handleChange} aria-label="lab API tabs example">
+            <Tab style={tablabel} label="Preview" value="1" />
+            <Tab style={tablabel} label="Code" value="2" />
             
           </TabList>
         </Box>

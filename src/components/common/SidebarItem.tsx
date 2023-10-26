@@ -15,17 +15,36 @@ const SidebarItem = ({ item }: Props) => {
 
   return (
     item.sidebarProps && item.path ? (
+
+
+
+      
+
+
       <ListItemButton
         component={Link}
         to={item.path}
         sx={{
           "&:hover": {
             backgroundColor: colorConfigs.sidebar.hoverBg,
-            textDecoration: "underline", // Add underline on hover
+            textDecoration: "underline",
+
           },
+            '&::before': {
+              content: "''",
+              display: 'block',
+              position: 'absolute',
+              left: '9.5px',
+              height: '100%',
+              width: '1px',
+              opacity: 1,
+              background: 'rgb(15 47 96)',
+
+            },
+
           backgroundColor: appState === item.state ? colorConfigs.sidebar.activeBg : "unset",
           paddingY: "5px",
-          paddingX: "3px"
+          paddingX: "3px",
         }}
       >
         <ListItemIcon sx={{

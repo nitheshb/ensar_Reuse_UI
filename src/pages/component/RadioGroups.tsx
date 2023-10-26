@@ -28,6 +28,11 @@ import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
 
 import InstallRadio from '../install/InstallRadio';
 
+
+const tablabel = {
+  color:"#18181B"
+};
+
 const codeString = `import * as React from 'react';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -105,9 +110,9 @@ const  RadioGroups  = () => {
     <Box sx={{ width: '663px',   typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Preview" value="1" />
-            <Tab label="Code" value="2" />
+          <TabList TabIndicatorProps={{sx:{backgroundColor: "#18181B"}}} onChange={handleChange} aria-label="lab API tabs example">
+            <Tab style={tablabel} label="Preview" value="1" />
+            <Tab style={tablabel} label="Code" value="2" />
             
           </TabList>
         </Box>

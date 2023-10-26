@@ -23,6 +23,11 @@ import Check from '@mui/icons-material/Check';
 import InstallCommand from '../install/InstallCommand';
 
 
+const tablabel = {
+  color:"#18181B"
+};
+
+
 const codeString = `import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
@@ -144,9 +149,9 @@ const  Command  = () => {
     <Box sx={{ width: '663px',   typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Preview" value="1" />
-            <Tab label="Code" value="2" />
+          <TabList TabIndicatorProps={{sx:{backgroundColor: "#18181B"}}} onChange={handleChange} aria-label="lab API tabs example">
+            <Tab style={tablabel} label="Preview" value="1" />
+            <Tab style={tablabel} label="Code" value="2" />
             
           </TabList>
         </Box>

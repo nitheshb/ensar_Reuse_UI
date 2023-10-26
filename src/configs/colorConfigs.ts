@@ -13,6 +13,9 @@ const colorConfigs = {
     color: "#77777F",
   },
   
+  
+
+
 };
 
 export default colorConfigs;

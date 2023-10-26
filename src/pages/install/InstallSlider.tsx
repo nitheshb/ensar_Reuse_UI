@@ -28,6 +28,9 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
 
+
+
+
 const codeString = `yarn add @mui/material Slider`
 const codeString1 = `yarn add @mui/material Slider`
 
@@ -49,6 +52,44 @@ export default function SliderSizes() {
   );
 }`
 
+
+
+
+const stepstyle = {
+  "& .Mui-active":{
+  "&.MuiStepIcon-root":{
+  color:"#F4F4F5",
+  
+  
+},
+"& .MuiStepIcon-text":{
+  
+  fontSize:"1rem",
+  fill:"black"
+  
+}
+
+},
+"& .Mui-completed":{
+ "&.MuiStepIcon-root":{
+   color:"#F4F4F5",
+  
+},
+"& .MuiStepIcon-text":{
+  
+  fontSize:"2rem",
+  fill:"black"
+  
+}
+}
+}
+
+
+
+
+
+
+
 const  InstallSlider  = () => {
 
 
@@ -64,10 +105,7 @@ const  InstallSlider  = () => {
         
       };
 
-      const stepstyle ={
-        color:"#F4F4F5",
-        
-      };
+    
 
 
 
@@ -206,7 +244,7 @@ const  InstallSlider  = () => {
     <Box sx={{ width: '690px',   typography: 'body1' }}>
       <TabContext   value={value}>
         <Box style={tabPanelStyles}   sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList style={tabPanelStyles}  onChange={handleChange} aria-label="lab API tabs example">
+          <TabList style={tabPanelStyles}   onChange={handleChange} TabIndicatorProps={{sx:{backgroundColor: "#18181B"}}} aria-label="lab API tabs example">
             <Tab style={tabPanelStyles}  label="CLI" value="1" />
             <Tab style={tabPanelStyles}  label="Manual" value="2" />
             
@@ -274,7 +312,7 @@ const  InstallSlider  = () => {
 
         <TabPanel style={tabPanelStyle} value="2">   
         <Box sx={{ maxWidth: 690 }}>
-      <Stepper style={stepstyle}  activeStep={activeStep} orientation="vertical">
+      <Stepper   activeStep={activeStep} orientation="vertical" sx={stepstyle}>
         {steps.map((step, index) => (
           <Step   key={step.label}>
             <StepLabel 
